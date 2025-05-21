@@ -1,6 +1,6 @@
 import { defineConfig, MongoDriver } from '@mikro-orm/mongodb';
 import { Options } from '@mikro-orm/core';
-import { User } from './app/entities/user.entities';
+import { User } from './app/entities/user.entity';
 
 export default defineConfig({
   driver: MongoDriver,
@@ -8,4 +8,5 @@ export default defineConfig({
   dbName: 'own_db',
   entities: [User],
   forceEntityConstructor: true,
+  allowGlobalContext: true,
 } satisfies Options<MongoDriver>);
